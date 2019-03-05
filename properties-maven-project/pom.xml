@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>by.htp.les04</groupId>
+  <artifactId>properties-maven-project</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>properties-maven-project</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.9</maven.compiler.source>
+		<maven.compiler.target>1.9</maven.compiler.target>
+	</properties>
+  
+  <build>
+  	<finalName>${project.artifactId}-${java.version}</finalName>
+  </build>
+  
+  <description>${env.PATH}</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+</project>
+
+<!--
+Предопределёные переменные
+Предопределённые переменные можно разделить на несколько видов.
+Встроенные свойства
+
+${basedir}
+директория где лежит pom.xml
+${version}
+тоже самое что и ${project.version} или ${pom.version}
+Свойства проекта На все свойства в pom.xml, можно сослаться с помощью префиксов project. или pom. Ниже приведён пример некоторых часто используемых элементов.
+
+${project.build.directory}
+ваша "target" директория,или тоже самое
+${pom.project.build.directory}
+${project.build.outputDirectory}
+путь к директории куда компилятор складывает файлы по умолчанию "target/classes"
+${project.name}
+или ${pom.name} имя Вашего проекта
+${project.version}
+или ${pom.version} версия Вашего проекта.
+Настройки пользователя Можно получить доступ к свойствам settings.xml с помощью префикса settings. ,например:
+
+${settings.localRepository} путь к локальному репозиторию пользователя.
+Переменные окружения Для доступа к переменным окружения используйте префикс env. Примеры:
+
+${env.M2_HOME}
+путь .
+${java.home}
+specifies the path to the current JRE_HOME environment use with relative paths to get for example: <jvm>${java.home}../bin/java.exe</jvm>
+-->

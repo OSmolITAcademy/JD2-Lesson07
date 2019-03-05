@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="by.jd2.hib_ex02.bean.Task" table="tasks">
+
+		<meta attribute="class-description">
+			This class contains the users detail.
+		</meta>
+		<id name="idTask" type="int" column="id_task">
+			<generator class="native" />
+		</id>
+
+		<property name="title" column="title" type="string" />
+
+		<many-to-one name="user" class="by.jd2.hib_ex02.bean.User" cascade="all">
+			<column name="fid_user" not-null="true" />
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>
